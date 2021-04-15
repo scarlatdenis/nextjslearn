@@ -1,18 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-export default function Users() {
-  const [users, setUsers] = useState([
-    { id: 1, name: "Petea" },
-    { id: 2, name: "Jorik" },
-  ]);
-
-  useEffect(async () => {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/users`);
-    const data = await response.json();
-    setUsers(data);
-  }, []);
-
+export default function Users({ users }) {
   return (
     <>
       <h1>Users: </h1>
@@ -29,3 +18,11 @@ export default function Users() {
   );
 }
 
+export async function getStaticProps(context) {
+  const response = await fetch(`https://jsonplaceholder.typicode.com/users`);
+  const users = await response.json();
+
+  return {
+    props: { users }, // will be passed to the page component as props
+  };
+}
