@@ -1,6 +1,7 @@
-import Header from "./components/header/header";
-import styles from "../styles/Home.module.css";
-
-export default function Home() {
-  return <Header />;
+export default function Index() {
+  return (
+    <div>
+      <h3>This is first page</h3>
+    </div>
+  );
 }
