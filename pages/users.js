@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Users() {
@@ -6,6 +6,13 @@ export default function Users() {
     { id: 1, name: "Petea" },
     { id: 2, name: "Jorik" },
   ]);
+
+  useEffect(async () => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users`);
+    const data = await response.json();
+    setUsers(data);
+  }, []);
+
   return (
     <>
       <h1>Users: </h1>
@@ -21,3 +28,4 @@ export default function Users() {
     </>
   );
 }
+
