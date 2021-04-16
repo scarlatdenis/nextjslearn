@@ -1,13 +1,15 @@
 import { useRouter } from "next/router";
-
+import MainContainer from "..//../components/MainContainer";
 export default function User({ user }) {
   const { query } = useRouter();
 
   return (
-    <div>
-      <h1>User nr: {query.id}</h1>
-      <h2>User name: {user.name}</h2>
-    </div>
+    <MainContainer>
+      <div>
+        <h1>User nr: {query.id}</h1>
+        <h2>User name: {user.name}</h2>
+      </div>
+    </MainContainer>
   );
 }
 

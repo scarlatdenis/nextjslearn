@@ -1,20 +1,30 @@
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import MainContainer from "../components/MainContainer";
 
 export default function Users({ users }) {
   return (
-    <>
+    <MainContainer>
+      
       <h1>Users: </h1>
-      <ul>
+
+      <ul className="users">
         {users.map((user) => (
-          <li key={user.id}>
+          <li key={user.id} className={"user"}>
             <Link href={`/users/${user.id}`}>
               <a>{user.name}</a>
             </Link>
           </li>
         ))}
+        <style jsx>
+          {`
+            .users {
+              margin: 20px 0 0 20px;
+              list-style-type: none;
+            }
+          `}
+        </style>
       </ul>
-    </>
+    </MainContainer>
   );
 }
 

@@ -1,25 +1,11 @@
-import Link from "next/link";
-import A from "../components/A";
+import MainContainer from "../components/MainContainer";
 
 export default function Index() {
   return (
-    <div>
-      <div className={"navbar"}>
-        <A href={"/"} text="home" />
-        <A href={"/users"} text="users" />
+    <MainContainer>
+      <div>
+        <h3>This is first page</h3>
       </div>
-
-      <h3>This is first page</h3>
-
-      <style jsx>
-        {`
-          .navbar {
-            background: orange;
-            padding: 15px;
-          }
-        
-        `}
-      </style>
-    </div>
+    </MainContainer>
   );
 }
