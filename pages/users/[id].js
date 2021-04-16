@@ -4,7 +4,7 @@ export default function User({ user }) {
   const { query } = useRouter();
 
   return (
-    <MainContainer>
+    <MainContainer keywords={user.name}>
       <div>
         <h1>User nr: {query.id}</h1>
         <h2>User name: {user.name}</h2>

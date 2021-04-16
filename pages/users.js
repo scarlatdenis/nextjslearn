@@ -3,7 +3,7 @@ import MainContainer from "../components/MainContainer";
 
 export default function Users({ users }) {
   return (
-    <MainContainer>
+    <MainContainer keywords={"users page"}>
       
       <h1>Users: </h1>
 
