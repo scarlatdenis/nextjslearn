@@ -1,3 +1,8 @@
+/.enf
+/node_modules
+/.idea
+/.next
+
 # Logs
 logs
 *.log
